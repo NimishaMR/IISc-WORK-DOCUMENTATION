@@ -19,19 +19,19 @@ This section encompasses various other tasks, projects, and assignments I undert
 
 Each of the branches within this repository adheres to a consistent structure to ensure clarity and ease of reference:
 
-    **README**
+   1)**README**
        Provides an overview of the branch's purpose and contents.
 
-    **Installations and Dependencies**
+    2)**Installations and Dependencies**
        Offers detailed information on the prerequisites and dependencies required for the project.
 
-    **Procedure for Implementation**
+    3)**Procedure for Implementation**
        Outlines step-by-step instructions on how to implement the project or work associated with the branch.
 
-    **Results Screenshots**
+    4)**Results Screenshots**
        Includes screenshots, diagrams, or visual representations of the results achieved as part of the work.
 
-    **Errors and Resolutions**
+    5)**Errors and Resolutions**
        Catalogs any encountered errors or issues and provides comprehensive steps for resolution and troubleshooting.
 
 
