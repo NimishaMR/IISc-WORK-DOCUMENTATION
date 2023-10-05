@@ -10,7 +10,7 @@ This section focuses on all aspects related to DPDK, including but not limited t
 
 In this subsection, you will find details about the implementation, configuration, and usage of F-Trace, along with other relevant tracers.
 
-3)**Other Miscellaneous Work**
+3) **Other Miscellaneous Work**
 
 This section encompasses various other tasks, projects, and assignments I undertook during my internship.
 
