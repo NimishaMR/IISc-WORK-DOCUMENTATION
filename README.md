@@ -28,10 +28,7 @@ Each of the branches within this repository adheres to a consistent structure to
 3)**Procedure for Implementation**
        Outlines step-by-step instructions on how to implement the project or work associated with the branch.
 
-4)**Results Screenshots**
-       Includes screenshots, diagrams, or visual representations of the results achieved as part of the work.
-
-5)**Errors and Resolutions**
+4)**Errors and Resolutions**
        Catalogs any encountered errors or issues and provides comprehensive steps for resolution and troubleshooting.
 
 Please feel free to explore the specific branches and sections that pertain to your area of interest or need. Should you have any questions, require further clarifications, or wish to collaborate, please do not hesitate to reach out. Your feedback and contributions are highly valued.
