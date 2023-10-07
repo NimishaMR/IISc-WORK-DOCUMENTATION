@@ -46,6 +46,7 @@ the initialization routine to decide how to allocate these resources (that is, m
 
 
 **How does DPDK help reduce latencies inthe netwroking stcack?**
+
 1)For a typical application on Linux that sends a packet, when the application calls the send() syscall for example, the packet is 
 copied from user-space memory into Kernel memory (into an skbuff). The skbuff is then copied into another section of memory by the 
 Kernel that is accessible to the NIC. The Kernel signals to the NIC that there is a packet waiting to be sent and the NIC then copies 
