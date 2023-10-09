@@ -12,6 +12,6 @@ apt-get -y install python3-pyelftools
 apt -y install libelf-dev
 apt-get -y install linux-headers-`uname -r` || apt -y install  linux-headers-generic
 
-echo "$"
+
 
 
