@@ -60,3 +60,16 @@ DMA memory space into the user-land memory space the application is using, hence
 
 2)DPDK does batch processing to avoid latencies.And it achieves fast packet processing and low latency with NVIDIA Poll Mode Driver (PMD) 
 in DPDK. DPDK is a set of libraries and optimized network interface card (NIC) drivers for fast packet processing in a user space.
+
+**Drawbacks of DPDK**
+1)To start, it is a bit of a niche technology, so finding articles and examples online (especially for use-cases outside established areas) can be challenging.
+
+2)Bypassing the kernel means you also bypass its time-tested TCP stack. If your application uses a TCP based protocol like HTTP, you need to provide your own TCP networking stack in userspace. There are frameworks like Seastar and F-Stack that help, but migrating your application to them may be non-trivial.
+
+3)Working with a custom framework might also mean that you are tied to the specific DPDK version that it supports, which might not be the version supported by your network driver or kernel.
+
+4)In bypassing the kernel you also bypass a rich ecosystem of existing tools and features for securing, monitoring and configuring your network traffic. Many of the tools and techniques that you are accustomed to no longer work.
+
+5)If you use poll-mode processing your CPU usage will always be 100%. In addition to not being energy efficient, it also makes it difficult to quickly assess/troubleshoot your workload using CPU usage as a gauge.
+
+6)DPDK based applications take full control of the network interface, which means: You must have more than one interface. If you want to modify device settings, you have to do it before startup, or through the application. 
