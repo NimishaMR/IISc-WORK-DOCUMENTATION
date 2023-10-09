@@ -48,7 +48,7 @@ the initialization routine to decide how to allocate these resources (that is, m
 <img src="Media/https:/0_E6pvV9ebVYVCCC2L.png" width="auto"> 
 
 
-**How does DPDK help reduce latencies inthe netwroking stcack?**
+**How does DPDK help reduce latencies inthe networking stack?**
 
 1)For a typical application on Linux that sends a packet, when the application calls the send() syscall for example, the packet is 
 copied from user-space memory into Kernel memory (into an skbuff). The skbuff is then copied into another section of memory by the 
