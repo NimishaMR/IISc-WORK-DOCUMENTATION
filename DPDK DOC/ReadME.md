@@ -45,7 +45,7 @@ It provides a generic interface that hides the environment specifics from the ap
 the initialization routine to decide how to allocate these resources (that is, memory space, PCI devices, timers, consoles, and so on).
 
 
-<img src="Media/https:/0_E6pvV9ebVYVCCC2L.png.png" width="auto"> 
+<img src="Media/https:/0_E6pvV9ebVYVCCC2L.png" width="auto"> 
 
 
 **How does DPDK help reduce latencies inthe netwroking stcack?**
