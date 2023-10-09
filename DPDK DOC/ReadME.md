@@ -45,6 +45,9 @@ It provides a generic interface that hides the environment specifics from the ap
 the initialization routine to decide how to allocate these resources (that is, memory space, PCI devices, timers, consoles, and so on).
 
 
+<img src="Media/https:/0_E6pvV9ebVYVCCC2L.png.png" width="auto"> 
+
+
 **How does DPDK help reduce latencies inthe netwroking stcack?**
 
 1)For a typical application on Linux that sends a packet, when the application calls the send() syscall for example, the packet is 
