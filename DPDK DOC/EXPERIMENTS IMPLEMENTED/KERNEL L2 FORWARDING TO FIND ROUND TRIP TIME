@@ -1,0 +1,44 @@
+The set up is between 4s0 and 3s0 (3so is acting as the bridge and  4s0 acting as the network namespace which sends and receives packets)
+
+1)go to Documents/joy
+
+2)sudo ./multinic_namespace_cfg.sh (should be run as root only- else it wont create the namespaces)
+3)Make sure that the port numbers in this script is enp4s0f0 and enp4s0f1
+4)This will create the network namespaces and to verify that execute :
+ip netns list
+The output should be nsRX (id: 1)
+                     nsTX (id: 0)
+5)Becauses network namespaces have been created in this system, if you now run ip a , the ports 4s0f0 and 4s0f1 wont show up
+6)Even in wireshark the two ports wont be visible 
+7)So if you want to still open wireshrak for those two ports then run wirehsark through terminal using:
+  sudo ip netns exec nsTX wireshark 
+  sudo ip netns exec nsRX wireshark
+8)To undo/remove network namespaces that have been created run: the same script wiht a delete command like this:
+sudo ./multinic_namespace_cfg.sh delete
+
+Now if you run ip a the ports will reapppar
+
+
+Next to set up the 3s0 system's two ports as the forwarding bridges, run this command in that system:
+1)go to /documents/Joy and run the script multinic-as-bridge.sh
+2)IN this script ensure that the ports mentione are 3s0f0 and 3s0f1
+3)Do not create any network namespace in this system , you should just create a bridge here.
+
+
+
+Now to send UDP packets from 4s0 and 3s0 fowards it back to 4so and to receive this we need to run the following commands in 4so system
+as iperf server and client programs
+
+1)apt install iperf
+2)in one tab first run this command to set up the server to listen:
+sudo ip netns exec nsTX iperf -s -u -p 8000
+
+3)Now that the server is listening, run this command in another tab to send packets:
+sudo ip netns exec nsRX iperf -c 11.11.11.10 -u -t 15 -b 1k -p 8000
+(This command sends UDP packets for 15 seconds at a bandwidth of 1K on port 8000)
+
+Then you can run wireshark on 3s0 and choose Epoch time as the timestamp and the Identification field:
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
