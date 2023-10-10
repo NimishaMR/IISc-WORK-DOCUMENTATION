@@ -3,6 +3,16 @@ DISCLAIMER:
 This file has the solutions and some links to solve some common errors which coe while setting up or implementing DPDK.
 The one's documented here are the errors which I came across , there may be few other errors which are different from mine as well.
 ---------------------------------------------------------------------------------------------------------------------------------------------
+
+Befor anything else:  if your ip a command is not showing the multinic : then:
+
+1)either SFP Module is not loaded:To solve this issue refer to my POSSIBLE ERRORS AND CORRECTONS FILE:
+2)Ixgbe drive module may have to reinstalled:
+sudo modprobe -r -v ixgbe
+sudo modprobe -v ixgbe
+3)Or last case:the pysical driver ,module maybe corrupted ,have to replace it
+
+------------------------------------------------------------------------------------------------------------------------------------------------
 1)IF A ETHERNET NIC IS NOT VISIBLE ON IP A/IFCONFIG BUT ITS VISIBLE ON LSCPI HOW TO SOLVE IT:
 
 When I gave  ip -a in the terminal and a particular etheret card was not being identified ,namely:
