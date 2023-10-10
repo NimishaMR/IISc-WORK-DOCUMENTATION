@@ -1,19 +1,30 @@
 First setup pktgen application:
 
 Follow these steps for it:
-git clone git://dpdk.org/apps/pktgen-dpdk
-cd pktgen-dpdk
-make
----------------------------------------------------------------------------------
+1)git clone git://dpdk.org/apps/pktgen-dpdk
+2)cd pktgen-dpdk
+4)cd cfg
+5)sudo nano default.cfg
+(here few things have to be removed and changed):
+a)in "devices" : Remove the other random devices and instead add the names of your nic's devices"
+b)in cores: remove the list of cores your cpu doesnt have
+c)completely remove blocklist and allowlist
+then go back to pktgen directory:
+6)cd pktgen-dpdk
+7)make
 
-PKT-gen documentation that worked:
 
-1)cd /home/zenlab/Documents/joy/pktgen-dpdk/
-2)echo 2048 > /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages
-(dont reserve any value lesser than this because it wont be sufficient for pktgen)
-3)cd usr/local/bin/dpdk-devbind.py --status
-4)then assign the binding to the ports using devbing.py/ - u
-4)cd /home/zenlab/Documents/joy/pktgen-dpdk/
-5)./tools/run.py -v default
+There are two ways to generate packets:
+Run a lua script or type pacet features in the command line:
+To run commmad line go to :
+cd Buiddir/app 
+Here you can execute your pktgen command using EAL Parameters
 
+**NOTE: BEFORE RUNNING ANY PKTGEN APPLICATION MAKE SURE THAT HUGE PAGES ARE SET UP , THE NIC WHO'S PORT IS SENDING THE PACKET IS BOUND TO ANY DPDK-BASED 
+DRIVERS "
+
+
+
+THere are two scripts in the experiments implemented folder called "install-dpdk-pktgen.sh" and "dpdk-install-joy.sh"
+These two scripts an be run as root to overall install dpdk and pktgen together and also set up all hugepages and bind the ports to DPDK
 
