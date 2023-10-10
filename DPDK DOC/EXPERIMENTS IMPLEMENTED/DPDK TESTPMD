@@ -1,0 +1,29 @@
+5)To run PMD test:
+https://core.dpdk.org/doc/quick-start/
+build/app/dpdk-testpmd -c7 --vdev=net_pcap0,iface=eth0 --vdev=net_pcap1,iface=eth1 --
+                  -i --nb-cores=2 --nb-ports=2 --total-num-mbufs=2048
+
+testpmd> show port stats all
+(OR)
+
+build/app/dpdk-testpmd -c7 --vdev=net_pcap0,iface=enp7s0f0 --vdev=net_pcap1,iface=enp7s0f1 --
+
+
+
+
+
+OUTPUT:
+
+
+
+8)dpdk-devbind.py -- lcores-0,1,2, NUMA nodes--
+
+9)for testpmd:
+cd app
+ls
+dpdk-testpmd
+sudo apt install dpdk-dev
+dpdk-testpmd
+testpmd -l 54,55,56 -w 0000:af:01.0 --iova-mode=pa -- -i
+
+
