@@ -12,4 +12,35 @@ apt-get -y install python3-pyelftools
 apt -y install libelf-dev
 apt-get -y install linux-headers-`uname -r` || apt -y install  linux-headers-generic
 
+--------------------------------------------------------------------------------------------------------------------------
+#Hugepages configuration
 
+
+>>>Applications using hugepages can benefit from these larger page sizes because they have a greater chance of finding memory mapping info
+in cache and thereby avoid more expensive operations.
+
+By using a larger page size, a single TLB entry can represent a larger memory range.  As mentioned before, the default page size in Linux is 4 KB. 
+A large page in Linux is 2 MB. 
+So a large page can cover the same memory range as 512 4 KB pages. As a result, there will be less pressure on the TLB and memory-intensive 
+applications may have better  performance due to an increased TLB hit ratio.
+
+>>>Using huge pages means the processor’s MMU (memory management unit) spends less time walking page tables to refill the TLB. Using hugepages also
+reduces the amount of memory used for storing the page tables
+and it reduces the operating system maintenance of page states.
+Hugepages must be enabled for running DPDK with high performance.
+
+>>>https://doc.dpdk.org/guides/tools/hugepages.html
+
+**To display current huge page settings**
+dpdk-hugepages.py -s
+
+**To a complete setup of with 2 Gigabyte of 1G huge pages:**
+dpdk-hugepages.py -p 1G --setup 2G
+
+
+**Command to allocate hugepages:**
+
+echo 1024 > /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages
+
+
+In some applications, 1024 may not be enough , then it will show an error regarding memory shortage , you can then allocate 2048 instead of 1024
