@@ -43,7 +43,9 @@ The mount point can be made permanent across reboots, by adding the following li
 nodev /mnt/huge hugetlbfs pagesize=1GB 0 0
 
 ---------------------------------------------------------------------------------------------------------------------------------
-#Checking and enabling iommu groups:
+#Checking and enabling iommu groups for vfio configuration
+
+
 
 
 
