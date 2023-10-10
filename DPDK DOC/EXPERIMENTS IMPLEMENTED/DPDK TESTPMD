@@ -27,3 +27,19 @@ dpdk-testpmd
 testpmd -l 54,55,56 -w 0000:af:01.0 --iova-mode=pa -- -i
 
 
+Run test pmd on dpdk-22 version: go to /build/app
+run the command:
+./dpdk-testpmd  -n 4 -- -i --port-topology=chained
+
+then type :set fwd txonly
+then type start
+
+
+
+to capture it : open one more secondary instance of dpdk on 22 version and then go to build/app and type:
+
+./build/app/dpdk-dumpcap  -i 1 -c 6 -w /tmp/capture.pcap
+
+
+THe pcap file will get saved
+
