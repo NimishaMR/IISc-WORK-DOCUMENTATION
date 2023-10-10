@@ -1,3 +1,12 @@
+#Software specifications
+
+Kernel version >= 4.14 (uname -r)
+glibc >= 2.7 (for features related to cpuset
+Ubuntu version >16.4
+
+
+
+
 #Packages to be installed:
 
 apt-get -y update
@@ -23,19 +32,19 @@ dpdk-hugepages.py -p 1G --setup 2G
 
 
 **COMMAND TO ALLOCATE HUGEPAGES:**
-
+mkdir -p /dev/hugepages
+mountpoint -q /dev/hugepages || mount -t hugetlbfs nodev /dev/hugepages
 echo 1024 > /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages
 
 
 In some applications, 1024 may not be enough , then it will show an error regarding memory shortage , you can then allocate 2048 instead of 1024
-To make the hugepages of size 1GB available for DPDK use, following steps must be performed:
-
-mkdir /mnt/huge
-mount -t hugetlbfs pagesize=1GB /mnt/huge
 
 The mount point can be made permanent across reboots, by adding the following line to the /etc/fstab file:
 nodev /mnt/huge hugetlbfs pagesize=1GB 0 0
 
 ---------------------------------------------------------------------------------------------------------------------------------
+#Checking and enabling iommu groups:
+
+
 
 
