@@ -45,7 +45,20 @@ nodev /mnt/huge hugetlbfs pagesize=1GB 0 0
 
 --------------------------------------------------------------------------------------------------------------------------------
 #IOMMU GROUPS AND VFIO CONFIGURATION
-G
+
+To verify if iommu is enabled:
+
+sudo nano /etc/default/grub:
+IN the editor add "                " to the GRUB_CMDLINE_LINUX_DEFAULT field
+
+1)Is 'Vt-d' enabled in the bios?
+2)Try to modprobe vfio-pci and see whether it shows under /sys/bus/pci/drivers/.
+3)then you may want to add vfio-pci to /etc/modules so that it gets loaded automatically on boot.
+
+After this , the '/sys/kernel/iommu_groups/' folder must have few iommu groups 
+or else , you have not enabled iommu propely or your system doesnt support it.
+
+
 
 
 
