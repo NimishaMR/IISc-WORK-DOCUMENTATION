@@ -8,3 +8,5 @@ FIRST RUN A BASIC SKELETON EXAMPLE
 an error may come as Cause: Error: number of ports must be even
 This is because only  eth1 (one port) has been bound to dpdk:
 So bind the another port (eth2) as well to the same uio driver like how we did for port 1
+
+
