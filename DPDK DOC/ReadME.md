@@ -72,4 +72,22 @@ in DPDK. DPDK is a set of libraries and optimized network interface card (NIC) d
 
 5)If you use poll-mode processing your CPU usage will always be 100%. In addition to not being energy efficient, it also makes it difficult to quickly assess/troubleshoot your workload using CPU usage as a gauge.
 
+**Hugepages**
+Applications using hugepages can benefit from these larger page sizes because they have a greater chance of finding memory mapping info
+in cache and thereby avoid more expensive operations.
+
+By using a larger page size, a single TLB entry can represent a larger memory range.  As mentioned before, the default page size in Linux is 4 KB. 
+A large page in Linux is 2 MB. 
+So a large page can cover the same memory range as 512 4 KB pages. As a result, there will be less pressure on the TLB and memory-intensive 
+applications may have better  performance due to an increased TLB hit ratio.
+
+Using huge pages means the processor’s MMU (memory management unit) spends less time walking page tables to refill the TLB. Using hugepages also
+reduces the amount of memory used for storing the page tables
+and it reduces the operating system maintenance of page states.
+Hugepages must be enabled for running DPDK with high performance.
+
+https://doc.dpdk.org/guides/tools/hugepages.html
+
+**iommu grops and DPDK drivers**
+
 6)DPDK based applications take full control of the network interface, which means: You must have more than one interface. If you want to modify device settings, you have to do it before startup, or through the application. 
