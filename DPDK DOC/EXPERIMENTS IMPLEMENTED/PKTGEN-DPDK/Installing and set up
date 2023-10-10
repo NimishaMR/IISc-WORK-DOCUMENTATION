@@ -1,28 +1,6 @@
 First setup pktgen application:
-https://pktgen-dpdk.readthedocs.io/en/latest/getting_started.html
 
-
-to do that the commands in the terminal are:
-Pktgen requires the DPDK source code to build.
-apt install git
-#clone the dpdk repository 
-git clone http://dpdk.org/git/dpdk
-#clone the pktgen repo:
-git clone git://dpdk.org/apps/pktgen-dpdk
-
- #next to build dpdk and pkt gen:
-Set up the environmental variables required by DPDK:
-export RTE_TARGET=x86_64-native-linuxapp-gcc
-
-#create the dpdk build tree
-/home/joy/Documents/tsn-project/nfp-codes/microC-programs/Tests
-
-You will require the Linux kernel headers to allow DPDK to build its kernel modules:
-  sudo apt-get install linux-headers-5.15.0-78-generic(replace with your relavent kernel version)
-
-DPDK can also work with a libpcap driver which is sometimes useful for testing without a real NIC or for low speed packet capture. 
-Install the libpcap development libs using your package manage:
-sudo apt-get install libcap-dev
+Follow these steps for it:
 
 ---------------------------------------------------------------------------------
 
@@ -35,5 +13,5 @@ PKT-gen documentation that worked:
 4)then assign the binding to the ports using devbing.py/ - u
 4)cd /home/zenlab/Documents/joy/pktgen-dpdk/
 5)./tools/run.py -v default
-6)page stats 
+
 
