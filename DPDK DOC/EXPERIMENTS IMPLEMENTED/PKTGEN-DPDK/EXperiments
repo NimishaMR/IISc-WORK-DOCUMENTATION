@@ -1,4 +1,5 @@
 Here is a list of all the things I've tried with PKTGEN:
 
 
-1)
+1)Running a simple pktgen command line interface to send packets
+2)Running 2 pktgen instances at once 
