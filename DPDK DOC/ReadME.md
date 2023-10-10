@@ -139,6 +139,44 @@ https://www.packetcoders.io/what-is-dpdk/
 
 https://www.sartura.hr/20181029-state-of-fast-path-networking-in-linux.pdf
 
+THE SLIDES EXPLAINING IN DETAIL ABOUT L2 FORWARDING EXAMPLE
+
+https://www.cse.iitb.ac.in/~mythili/os/anno_slides/DPDK_deep_dive_slides.pdf
+
+L3 FORWARDING TESTS:
+
+https://doc.dpdk.org/dts/test_plans/l3fwd_test_plan.html
+
+SCAPY TRAFFIC GENERATOR:
+
+https://stackoverflow.com/questions/68836518/scapy-traffic-generator-for-dpdk-l3fwd-application
+
+CISCO TREX FOR TRAFFIC GENERATION:
+
+https://stackoverflow.com/questions/68836518/scapy-traffic-generator-for-dpdk-l3fwd-application
+
+How to generate traffic in dpdk:
+
+https://stackoverflow.com/questions/68983270/how-to-send-packet-another-server-using-dpdk
+
+HOW TO SET UP SINGLE FLOW AND MULTI FLOW TRAFFIC:
+
+https://levelup.gitconnected.com/building-a-high-performance-linux-based-traffic-generator-with-dpdk-93bb9904416c
+
+IMPORTATNT LINK:
+
+https://github.com/atoonk/dpdk_pktgen/tree/master
+
+BUILD YOUR OWN TRAFFIC GENERATOR:
+
+https://www.intel.com/content/www/us/en/developer/articles/training/build-your-own-dpdk-traffic-generator.html
+
+LEARNING L2 FORWARDING:
+
+https://haryachyy.wordpress.com/2014/11/09/learning-dpdk-l2-forwarding-app/
+
+
+
 
 
 
