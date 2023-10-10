@@ -49,7 +49,7 @@ nodev /mnt/huge hugetlbfs pagesize=1GB 0 0
 To verify if iommu is enabled:
 
 sudo nano /etc/default/grub:
-IN the editor add "                " to the GRUB_CMDLINE_LINUX_DEFAULT field
+IN the editor add " intel_iommu=on iommu=pt " to the GRUB_CMDLINE_LINUX_DEFAULT field
 THen do sudo update grub
 Reboot the system for changes to get saved
 
