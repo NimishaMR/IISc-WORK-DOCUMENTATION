@@ -35,8 +35,36 @@ observe the same packets being received by the wireshark in the receiving system
 The number of packets after which RXTX callbacks prints the cpu latency can be chnaged in this file using this command:
 1)Go to examples/rxtx callbacks and the main.c code and change this line:line 97
 if (latency_numbers.total_pkts > (100 * 1000 * 1000ULL)) {
-
-**THE OUTPUT WILL BE REPRESENTED IN THE FORM OF CPU CYLES(hertz/second)
-
+------------------------------------------------------------------------------------------------------------------------------------------------
+**THE OUTPUT WILL BE REPRESENTED IN THE FORM OF CPU CYLES(hertz/second)**
 Find out what the cpu cycle refers to in your system by finding the clock frequency and calculate how many seconds it takes:
+TO FIND CPU CORE FREQUENCY:
+
+1)cpufreq-info
+
+OR
+
+2)cat /proc/cpuinfo | grep MHz
+
+regarding chnaging cpu frequencies: https://forums.tomshardware.com/threads/frequency-keeps-changing.3514783/
+
+
+FOR A PROPER UI OUTPUT:
+
+snap install auto-cpufreq
+auto-cpufreq --monitor
+
+The math equation to calculate the time period is :
+So for example if its 2500MHz
+ then if it shows 39 cycles:
+
+then 39/25 * 10^8=15.6ns is the latency.
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 
