@@ -1,3 +1,7 @@
+NOTE: Before executing all these make sure that you have installed all the dependencies as mentioned in the "Installations and dependencies folder"
+
+
+
 1)Download the latest stable version of DPDK from this link: https://core.dpdk.org/download/
 
 2)tar xJf dpdk-23.03.tar.xz(or whichever version you download)
@@ -8,11 +12,11 @@
 
 5)sudo apt install build-essential
 
-6)meson -Dexamples=all build  wont execute cause elftools wasnt installed so install it 
+6)pip3 install pyelftools
 
-7)pip3 install pyelftools
-
-8)meson -Dexamples=all build
+7)meson -Dexamples=all build
+When -Dexamples=all is set as a meson option, meson will check each example application to see if
+it can be built, and add all which can be built to the list of tasks in the ninja build configuration file.
 
 9)cd build
 
@@ -24,7 +28,9 @@
 
 13)pkg-config --modversion libdpdk 
 
-   The above command should return the DPDK version installed. 
+The above command should return the DPDK version installed.If not found, export the path to the installed DPDK libraries:
+$ export PKG_CONFIG_PATH=/path/to/installed/".pc" file/for/DPDK
+
 14)#command sto reserve hugepages for dpdk
 
   echo 1024 > /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages
@@ -59,4 +65,6 @@
    cd build
    cd examples
    ./dpdk-helloworld -l 0-3 -n 4
+
 25)If you want you can also allocate certain cores for dpdk use only, this can be done by:
+   isolcpus=2,3,4,5,6,7,8
