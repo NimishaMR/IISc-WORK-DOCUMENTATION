@@ -119,4 +119,20 @@ It enables the user to use legacy linux tools such as ethtool or ifconfig while 
 It enables the DPDK application to filter only part of the traffic, while the rest will be directed and handled by the kernel driver. 
 The flow bifurcation is performed by the NIC hardware. As an example, using Flow isolated mode allows to choose strictly what is received in DPDK.
 
+**ABout VFIO driver:**
+
+https://dpdk.readthedocs.io/en/v16.04/linux_gsg/build_dpdk.html
+VFIO is a robust and secure driver that relies on IOMMU protection.
+
+It is recommended that vfio-pci be used as the kernel module for DPDK-bound ports in all cases. If an IOMMU is unavailable, the vfio-pci can be used in no-iommu mode. 
+If, for some reason, vfio is unavailable, then UIO-based modules, igb_uio and uio_pci_generic may be used.
+Most devices require that the hardware to be used by DPDK be unbound from the kernel driver it uses, and instead be bound to the vfio-pci kernel module before the application is run.
+For such PMDs, any network ports or other hardware under Linux* control will be ignored and cannot be used by the application.
+
+To bind ports to the vfio-pci module for DPDK use, or to return ports to Linux control, a utility script called dpdk-devbind.py is provided in the usertools subdirectory.
+Note that the UIO or VFIO kernel modules to be used, should be loaded into the kernel before running the dpdk-devbind.py script.
+
+
+
+
 
