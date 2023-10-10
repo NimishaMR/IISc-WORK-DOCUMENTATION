@@ -1,4 +1,4 @@
-#Software specifications
+#SYSTEM SPECIFICATIONS
 
 Kernel version >= 4.14 (uname -r)
 glibc >= 2.7 (for features related to cpuset
@@ -8,9 +8,7 @@ NOTE: ALL THE WORK PRESENTED HERE IS IN A LINUX ENVIRONMENT:
 IF YOU WANT TO IMPLEMENT DPDK ON A WINDOWS MACHINE HERE'S THE LINK: https://doc.dpdk.org/guides/windows_gsg/
 -----------------------------------------------------------------------------------------------------------------
 
-
-
-#Packages to be installed:
+#PACKAGES TO BE INSTALLED
 
 apt-get -y update
 apt-get -y upgrade
@@ -25,7 +23,7 @@ apt -y install libelf-dev
 apt-get -y install linux-headers-`uname -r` || apt -y install  linux-headers-generic
 
 --------------------------------------------------------------------------------------------------------------------------
-#Hugepages configuration
+#HUGEPAGE SETUP
 
 **DISPLAY CURRENT HUGEPAGES SETTINGS**
 dpdk-hugepages.py -s
@@ -45,8 +43,10 @@ In some applications, 1024 may not be enough , then it will show an error regard
 The mount point can be made permanent across reboots, by adding the following line to the /etc/fstab file:
 nodev /mnt/huge hugetlbfs pagesize=1GB 0 0
 
----------------------------------------------------------------------------------------------------------------------------------
-#Checking and enabling iommu groups for vfio configuration
+--------------------------------------------------------------------------------------------------------------------------------
+#IOMMU GROUPS AND VFIO CONFIGURATION
+
+
 
 
 
