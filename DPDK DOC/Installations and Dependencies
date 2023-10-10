@@ -4,6 +4,9 @@ Kernel version >= 4.14 (uname -r)
 glibc >= 2.7 (for features related to cpuset
 Ubuntu version >16.4
 
+NOTE: ALL THE WORK PRESENTED HERE IS IN A LINUX ENVIRONMENT:
+IF YOU WANT TO IMPLEMENT DPDK ON A WINDOWS MACHINE HERE'S THE LINK: https://doc.dpdk.org/guides/windows_gsg/
+-----------------------------------------------------------------------------------------------------------------
 
 
 
