@@ -17,6 +17,12 @@ It supports many processor architectures and both FreeBSD and Linux.
 The DPDK uses the Open Source BSD-3-Clause license for the core libraries and drivers. The kernel components are GPL-2.0 licensed.
 Data Plane Development Kit (DPDK) greatly boosts packet processing performance and throughput, allowing more time for data plane applications. DPDK can improve packet processing performance by up to ten times.As a result, telecom and network equipment manufacturers (TEMs and NEMs) can lower development costs, use fewer tools and support teams, and get to market faster.
 
+VIDEO GUIDE FOR DPDK INSTALLATION AND USAGE:
+
+https://www.intel.com/content/www/us/en/developer/videos/data-plane-development-dpdk-installation-guide.html
+
+
+
 The DPDK has five core components that are responsible for sending packets from point A to B in the framework:
 
 
@@ -72,6 +78,8 @@ in DPDK. DPDK is a set of libraries and optimized network interface card (NIC) d
 
 5)If you use poll-mode processing your CPU usage will always be 100%. In addition to not being energy efficient, it also makes it difficult to quickly assess/troubleshoot your workload using CPU usage as a gauge.
 
+6)DPDK based applications take full control of the network interface, which means: You must have more than one interface. If you want to modify device settings, you have to do it before startup, or through the application. 
+
 **Hugepages**
 Applications using hugepages can benefit from these larger page sizes because they have a greater chance of finding memory mapping info
 in cache and thereby avoid more expensive operations.
@@ -89,5 +97,7 @@ Hugepages must be enabled for running DPDK with high performance.
 https://doc.dpdk.org/guides/tools/hugepages.html
 
 **iommu grops and DPDK drivers**
+An input-output memory management unit (IOMMU) is required for safely driving DMA-capable hardware from userspace and because of that it is a prerequisite
+for using VFIO. Not all systems have one though, so you’ll need to check that the hardware supports it and that it is enabled in the BIOS settings
 
-6)DPDK based applications take full control of the network interface, which means: You must have more than one interface. If you want to modify device settings, you have to do it before startup, or through the application. 
+IOMMU needs to be excplitly enabled in the kernel as well. To do so, pass either intel_iommu=on (for Intel systems) or amd_iommu=on (for AMD systems) added to  the kernel command line. In addition it is recommended to use iommu=pt option which improves IO performance for devices in the host.
