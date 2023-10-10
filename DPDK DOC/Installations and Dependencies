@@ -91,8 +91,47 @@ The format of the port much change according to your system:
 
 
 ----------------------------------------------------------------------------------------------------------------------
+CONFIGURATIONS BEFORE RUNNING DPDK:
+#Get the hugepage size.
+awk '/Hugepagesize/ {print $2}' /proc/meminfo
 
+# Get the total huge page numbers.
+awk '/HugePages_Total/ {print $2} ' /proc/meminfo
 
+# Unmount the hugepages.
+umount `awk '/hugetlbfs/ {print $2}' /proc/mounts`
+
+# Create the hugepage mount folder.
+mkdir -p /mnt/huge
+
+# Mount to the specific folder.
+mount -t hugetlbfs nodev /mnt/huge
+
+Check the CPU layout using the DPDK cpu_layout utility:
+
+cd dpdk_folder
+
+usertools/cpu_layout.py
+Or run lscpu to check the cores on each socket.
+
+Check your NIC id and related socket id:
+
+# List all the NICs with PCI address and device IDs.
+lspci -nn | grep Eth
+For example suppose your output was as follows:
+
+82:00.0 Ethernet [0200]: Intel XL710 for 40GbE QSFP+ [8086:1583]
+82:00.1 Ethernet [0200]: Intel XL710 for 40GbE QSFP+ [8086:1583]
+85:00.0 Ethernet [0200]: Intel XL710 for 40GbE QSFP+ [8086:1583]
+85:00.1 Ethernet [0200]: Intel XL710 for 40GbE QSFP+ [8086:1583]
+Check the PCI device related numa node id:
+
+cat /sys/bus/pci/devices/0000\:xx\:00.x/numa_node
+Usually 0x:00.x is on socket 0 and 8x:00.x is on socket 1. 
+Note: To get the best performance, ensure that the core and NICs are in the 
+same socket. In the example above 85:00.0 is on socket 1 and should be used by
+cores on socket 1 for the best performance.
+--------------------------------------------------------------------------------------------------------------------------------------------------
 THESE ARE ALL THE INITIAL CONFIGURATIONS THAT HAVE TO BE DONE, IF THERE ARE ERRORS WHILE SETTING UP THESE THINGS...THEN CHECK THE FILE CALLED 
 "ERROR CORRECTIONA ND TROUBLESHOOTING"
 
