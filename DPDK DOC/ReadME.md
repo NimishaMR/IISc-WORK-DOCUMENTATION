@@ -132,6 +132,14 @@ For such PMDs, any network ports or other hardware under Linux* control will be 
 To bind ports to the vfio-pci module for DPDK use, or to return ports to Linux control, a utility script called dpdk-devbind.py is provided in the usertools subdirectory.
 Note that the UIO or VFIO kernel modules to be used, should be loaded into the kernel before running the dpdk-devbind.py script.
 
+**some useful links**
+THESE ARE VERY VERY GOOD READ TO UNDERSTAND THE RALTIONSHIP BW OPEN V SWITCH,DPDK,NORMAL KERNEL AND QUEMU:
+
+https://www.packetcoders.io/what-is-dpdk/
+
+https://www.sartura.hr/20181029-state-of-fast-path-networking-in-linux.pdf
+
+
 
 
 
