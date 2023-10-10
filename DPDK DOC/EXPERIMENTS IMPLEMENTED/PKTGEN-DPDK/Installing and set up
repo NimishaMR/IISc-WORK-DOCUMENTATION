@@ -1,7 +1,9 @@
 First setup pktgen application:
 
 Follow these steps for it:
-
+git clone git://dpdk.org/apps/pktgen-dpdk
+cd pktgen-dpdk
+make
 ---------------------------------------------------------------------------------
 
 PKT-gen documentation that worked:
