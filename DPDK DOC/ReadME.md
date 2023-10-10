@@ -96,8 +96,27 @@ Hugepages must be enabled for running DPDK with high performance.
 
 https://doc.dpdk.org/guides/tools/hugepages.html
 
-**iommu grops and DPDK drivers**
+**Iommu grops and DPDK drivers**
+
 An input-output memory management unit (IOMMU) is required for safely driving DMA-capable hardware from userspace and because of that it is a prerequisite
 for using VFIO. Not all systems have one though, so you’ll need to check that the hardware supports it and that it is enabled in the BIOS settings
 
 IOMMU needs to be excplitly enabled in the kernel as well. To do so, pass either intel_iommu=on (for Intel systems) or amd_iommu=on (for AMD systems) added to  the kernel command line. In addition it is recommended to use iommu=pt option which improves IO performance for devices in the host.
+
+Unless iommu groups are enabled , vfio-pci driver of dpdk can not be used .
+
+**Bifurcated Drivers**
+
+https://doc.dpdk.org/guides/linux_gsg/linux_drivers.html#bifurcated-driver
+
+PMDs which use the bifurcated driver co-exists with the device kernel driver. On such model the NIC is controlled by the kernel, while the 
+data path is performed by the PMD directly on top of the device.
+
+Such model has the following benefits:
+
+It is secure and robust, as the memory management and isolation is done by the kernel.
+It enables the user to use legacy linux tools such as ethtool or ifconfig while running DPDK application on the same network ports.
+It enables the DPDK application to filter only part of the traffic, while the rest will be directed and handled by the kernel driver. 
+The flow bifurcation is performed by the NIC hardware. As an example, using Flow isolated mode allows to choose strictly what is received in DPDK.
+
+
