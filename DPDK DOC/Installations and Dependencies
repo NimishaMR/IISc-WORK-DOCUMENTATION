@@ -13,5 +13,3 @@ apt -y install libelf-dev
 apt-get -y install linux-headers-`uname -r` || apt -y install  linux-headers-generic
 
 
-
-
