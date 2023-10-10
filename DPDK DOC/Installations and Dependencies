@@ -50,6 +50,9 @@ To verify if iommu is enabled:
 
 sudo nano /etc/default/grub:
 IN the editor add "                " to the GRUB_CMDLINE_LINUX_DEFAULT field
+THen do sudo update grub
+Reboot the system for changes to get saved
+
 
 1)Is 'Vt-d' enabled in the bios?
 2)Try to modprobe vfio-pci and see whether it shows under /sys/bus/pci/drivers/.
