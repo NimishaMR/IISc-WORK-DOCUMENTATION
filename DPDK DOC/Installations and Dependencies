@@ -48,22 +48,53 @@ nodev /mnt/huge hugetlbfs pagesize=1GB 0 0
 
 To verify if iommu is enabled:
 
-sudo nano /etc/default/grub:
+1)sudo nano /etc/default/grub:
 IN the editor add " intel_iommu=on iommu=pt " to the GRUB_CMDLINE_LINUX_DEFAULT field
 THen do sudo update grub
 Reboot the system for changes to get saved
 
 
-1)Is 'Vt-d' enabled in the bios?
-2)Try to modprobe vfio-pci and see whether it shows under /sys/bus/pci/drivers/.
-3)then you may want to add vfio-pci to /etc/modules so that it gets loaded automatically on boot.
+2)Is 'Vt-d' enabled in the bios?
+3)Try to modprobe vfio-pci and see whether it shows under /sys/bus/pci/drivers/.
+To verify that its loaded: lsmod
+4)then you may want to add vfio-pci to /etc/modules so that it gets loaded automatically on boot.
 
 After this , the '/sys/kernel/iommu_groups/' folder must have few iommu groups 
 or else , you have not enabled iommu propely or your system doesnt support it.
 
+commands run to verify if iommu in fact was enbaled:
+
+dmesg | grep -i iommu
+dmesg | grep "Virtualization Technology for Directed I/O" 
+dmesg | grep -e DMAR -e IOMMU
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Bind and unbind ports from ixgbe module(Kernel module), vfio or uio modules(DPDK Modules)
+
+sudo modprobe uio_pci_generic
+
+#command to unbind the enp1s0f0 from ixgbe driver before binding it to uio :
+./usertools/dpdk-devbind.py -u  0000:01:00.0
+
+#command to bind it to uio_pci_generic driver:
+./usertools/dpdk-devbind.py --bind=uio_pci_generic 0000:01:00.0
+
+next check the devbind status again to verify by runnning:
+./usertools/dpdk-devbind.py --status
+
+The format of the port much change according to your system:
+ To find out your card's pcie adress:
+ 1)ip a
+ 2)interface format [PCIe B:D:F]
 
 
 
+----------------------------------------------------------------------------------------------------------------------
+
+
+THESE ARE ALL THE INITIAL CONFIGURATIONS THAT HAVE TO BE DONE, IF THERE ARE ERRORS WHILE SETTING UP THESE THINGS...THEN CHECK THE FILE CALLED 
+"ERROR CORRECTIONA ND TROUBLESHOOTING"
 
 
 
