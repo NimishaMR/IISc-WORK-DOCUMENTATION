@@ -143,11 +143,11 @@ The timestamps recorded by DPDK are precise hardware-level timestamps that captu
 
 **useful links**
 
-https://mails.dpdk.org/archives/users/2016-December/001263.html : Tells this:Note that the timestamp is kept in a register on the NIC. It stores only one TX timestamp at a time, irregardless of the number of queues etc.You have to read this register via queue:getTimestamp() before another packet can be timestamped.
+1)https://mails.dpdk.org/archives/users/2016-December/001263.html : Tells this:Note that the timestamp is kept in a register on the NIC. It stores only one TX timestamp at a time, irregardless of the number of queues etc.You have to read this register via queue:getTimestamp() before another packet can be timestamped.
 
-https://doc.dpdk.org/guides/prog_guide/metrics_lib.html#timestamp-and-latency-calculation : scroll down to  Latency statistics library
+2)https://doc.dpdk.org/guides/prog_guide/metrics_lib.html#timestamp-and-latency-calculation : scroll down to  Latency statistics library
 
-
+3)
 
 
 **
