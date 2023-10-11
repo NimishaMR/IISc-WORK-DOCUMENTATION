@@ -18,7 +18,7 @@ set 0 rate 0.01
 NOw the average cycles in DPDK Was 39 cycles:
 
 
-<img src="Media/  RXTXcallbackcycles.png" width="auto"> 
+<img src="Media/RXTXcallbackcycles.png" width="auto"> 
 
 Hence the average forwarding latency for 50000 packets is:
 **15.6 ns**
