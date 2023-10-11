@@ -22,7 +22,7 @@ included in the core list 'l'.
 
 THis will open a CLI  like this :
 
-<img src="Media/pktgencli.png" width="auto">  
+<img src="MEDIA/pktgencli.png" width="auto">  
 
 
 Here is where you have to give the specifications for the packet such as:
@@ -50,13 +50,13 @@ https://pktgen-dpdk.readthedocs.io/en/latest/commands.html
 
 page stats: gives information about the  nummber of packets sent or received and dropped etc:
 
-<img src="Media/pagestats.png" width="auto">  
+<img src="MEDIA/pagestats.png" width="auto">  
 
 
 page latency: this command displays the latencyand threshold and jitter related information on the RX system .So if you have transmitted packets and received 
 them on another system, you can run this command on the RX system to find out the latency values
 
-<img src="Media/pagelatency.png" width="auto">  
+<img src="MEDIA/pagelatency.png" width="auto">  
 
 
 3)**Running 2 pktgen instances at once :**
@@ -64,7 +64,7 @@ them on another system, you can run this command on the RX system to find out th
 Any 2 dpdk related programs or instances can not be run together without setting few paramerets.So for example if you try running two instances of pktgen(maybe on 2 
 different ports of the same NIC,on 2 different terminals but the same system, then it will raise an error saying" already one instance of dpdk is running" like this:
 
-<img src="Media/error.png" width="auto">  
+<img src="MEDIA/error.png" width="auto">  
 
 
 
@@ -74,7 +74,7 @@ On terminal 2 you give:
 
 This will execute and you can carry out an experiment as follows:
 
-<img src="Media/ROUNDTRIP.png" width="auto">  
+<img src="MEDIA/ROUNDTRIP.png" width="auto">  
 
 
 As you can see in the picture , there is a packet generator(in this case oktgen) generates traffic from PORT 0 of one NIC at specified parameters and sends it through a otical fibre cable
