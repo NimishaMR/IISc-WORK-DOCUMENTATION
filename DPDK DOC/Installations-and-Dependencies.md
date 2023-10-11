@@ -95,11 +95,11 @@ sudo modprobe uio_pci_generic
 #next check the devbind status again to verify by runnning:
 ./usertools/dpdk-devbind.py --status
 ```
-<img src="Media/usertoolsdevbind.png" width=500> 
+<img src="Media/Usertoolsdevbind.png" width=500> 
 
 The format of the port much change according to your system:
  To find out your card's pcie adress:
- '''bash
+ ```bash
  1)ip a
  2)interface format [PCIe B:D:F]
 ```
