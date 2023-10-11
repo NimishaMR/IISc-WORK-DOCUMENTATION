@@ -18,7 +18,7 @@ set 0 rate 0.01
 NOw the average cycles in DPDK Was 39 cycles:
 
 
-<img src="Media/GNU_radio_companion_sample.png" width="auto"> 
+<img src="Media/rxtxcallback.png" width="auto"> 
 
 Hence the average forwarding latency for 50000 packets is:
 **15.6 ns**
@@ -28,9 +28,7 @@ IN kernel:
 If the bridging script is run in the system and wireshark captures are taken and compared each packet wise between the two ports of nic :
 then if the epoch time's are subtracted :
 
-<img src="Media/GNU_radio_companion_sample.png" width="auto"> 
-
-
+<img src="Media/wireshark.png" width="auto"> 
 
 The latencies progress as follows:
 
