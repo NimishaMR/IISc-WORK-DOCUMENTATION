@@ -103,6 +103,9 @@ IOMMU needs to be excplitly enabled in the kernel as well. To do so, pass either
 
 Unless iommu groups are enabled , vfio-pci driver of dpdk can not be used .
 
+
+<img src="Media/iommupt_frub.png" width=500> 
+
 **Bifurcated Drivers**
 
 https://doc.dpdk.org/guides/linux_gsg/linux_drivers.html#bifurcated-driver
@@ -126,6 +129,8 @@ It is recommended that vfio-pci be used as the kernel module for DPDK-bound port
 If, for some reason, vfio is unavailable, then UIO-based modules, igb_uio and uio_pci_generic may be used.
 Most devices require that the hardware to be used by DPDK be unbound from the kernel driver it uses, and instead be bound to the vfio-pci kernel module before the application is run.
 For such PMDs, any network ports or other hardware under Linux* control will be ignored and cannot be used by the application.
+
+<img src="Media/uio_pmd.png" width=500> 
 
 To bind ports to the vfio-pci module for DPDK use, or to return ports to Linux control, a utility script called dpdk-devbind.py is provided in the usertools subdirectory.
 Note that the UIO or VFIO kernel modules to be used, should be loaded into the kernel before running the dpdk-devbind.py script.
