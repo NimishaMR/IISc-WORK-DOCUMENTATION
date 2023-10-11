@@ -28,6 +28,8 @@ apt-get -y install linux-headers-`uname -r` || apt -y install  linux-headers-gen
 **DISPLAY CURRENT HUGEPAGES SETTINGS**
 dpdk-hugepages.py -s
 
+<img src="Media/hugepages.png" width=500> 
+
 **TO SET UP 2 GIGABYTE OF 1G HUGEPAGES**
 dpdk-hugepages.py -p 1G --setup 2G
 
@@ -60,6 +62,7 @@ To verify that its loaded: lsmod
 4)then you may want to add vfio-pci to /etc/modules so that it gets loaded automatically on boot.
 
 After this , the '/sys/kernel/iommu_groups/' folder must have few iommu groups 
+<img src="Media/iommugroups_inkernel.png" width=500> 
 or else , you have not enabled iommu propely or your system doesnt support it.
 
 commands run to verify if iommu in fact was enbaled:
@@ -82,6 +85,9 @@ sudo modprobe uio_pci_generic
 
 next check the devbind status again to verify by runnning:
 ./usertools/dpdk-devbind.py --status
+
+<img src="Media/usertoolsdevbind.png" width=500> 
+
 
 The format of the port much change according to your system:
  To find out your card's pcie adress:
