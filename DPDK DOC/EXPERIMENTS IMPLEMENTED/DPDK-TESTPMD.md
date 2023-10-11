@@ -1,6 +1,6 @@
 **This has information as to how testpmd forwarding application can be run**
 
-<img src="Media/PKTGENSETUP.png" width="auto">  
+<img src="Media/PKTGEN SETUP.png" width="auto">  
 
 
 1)First run the run PMD test:
