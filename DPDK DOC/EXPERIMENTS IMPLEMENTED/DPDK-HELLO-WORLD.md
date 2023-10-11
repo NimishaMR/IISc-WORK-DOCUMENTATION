@@ -71,7 +71,7 @@ $ export PKG_CONFIG_PATH=/path/to/installed/".pc" file/for/DPDK
 
 **The output looks like this**
    
-   <img src="Media/helloworld.png" width=500> 
+<img src="Media/helloworld.png" width=500> 
 
 25)If you want you can also allocate certain cores for dpdk use only, this can be done by:
 ```bash
