@@ -1,6 +1,6 @@
-NOTE: Before executing all these make sure that you have installed all the dependencies as mentioned in the "Installations and dependencies folder"
+**NOTE: Before executing all these make sure that you have installed all the dependencies as mentioned in the "Installations and dependencies folder"**
 
-
+**RUN EVERYTHING AS ROOT FOR A SMOOTH FLOW WITHOUT ERRORS**
 
 1)Download the latest stable version of DPDK from this link: https://core.dpdk.org/download/
 
@@ -66,6 +66,9 @@ $ export PKG_CONFIG_PATH=/path/to/installed/".pc" file/for/DPDK
    cd build
    cd examples
    ./dpdk-helloworld -l 0-3 -n 4
+
+   **The output looks like this**
+   
 
 25)If you want you can also allocate certain cores for dpdk use only, this can be done by:
    isolcpus=2,3,4,5,6,7,8
