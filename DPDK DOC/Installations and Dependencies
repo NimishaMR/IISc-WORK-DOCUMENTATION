@@ -28,7 +28,7 @@ apt-get -y install linux-headers-`uname -r` || apt -y install  linux-headers-gen
 **DISPLAY CURRENT HUGEPAGES SETTINGS**
 dpdk-hugepages.py -s
 
-<img src="" width=500> 
+<img src="https://github.com/NimishaMR/IISC-WORK-DOCUMENTATION/blob/main/DPDK%20DOC/Media/hugepages.png" width=500> 
 
 **TO SET UP 2 GIGABYTE OF 1G HUGEPAGES**
 dpdk-hugepages.py -p 1G --setup 2G
