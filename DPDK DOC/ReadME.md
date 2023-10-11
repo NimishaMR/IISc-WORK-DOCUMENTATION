@@ -40,6 +40,8 @@ The DPDK has five core components that are responsible for sending packets from 
 
 2)DPDK dedicates certain CPU Cores to be the packet receiver threads and since this particular core is restricteed only to DPDK, it uses a permanent polling mode in the driver to ensure the quickest possible response to arriving packets.
 
+<img src="Media/0_E6pvV9ebVYVCCC2L.png" width=500> 
+
 **What is EAL and PMD used in DPDK?**
 
 1)Poll Mode Driver - Instead of the NIC raising an interrupt to the CPU when a frame is received, the CPU runs a poll
@@ -49,10 +51,6 @@ and assigned to running PMD.
 2)The Environment Abstraction Layer (EAL) is responsible for gaining access to low-level resources such as hardware and memory space.
 It provides a generic interface that hides the environment specifics from the applications and libraries. It is the responsibility of 
 the initialization routine to decide how to allocate these resources (that is, memory space, PCI devices, timers, consoles, and so on).
-
-
-<img src="Media/0_E6pvV9ebVYVCCC2L.png" width=500> 
-
 
 **How does DPDK help reduce latencies inthe networking stack?**
 
@@ -119,7 +117,7 @@ It enables the user to use legacy linux tools such as ethtool or ifconfig while 
 It enables the DPDK application to filter only part of the traffic, while the rest will be directed and handled by the kernel driver. 
 The flow bifurcation is performed by the NIC hardware. As an example, using Flow isolated mode allows to choose strictly what is received in DPDK.
 
-**ABout VFIO driver:**
+**About VFIO driver:**
 
 https://dpdk.readthedocs.io/en/v16.04/linux_gsg/build_dpdk.html
 VFIO is a robust and secure driver that relies on IOMMU protection.
