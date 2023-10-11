@@ -1,5 +1,8 @@
 **This has information as to how testpmd forwarding application can be run**
 
+<img src="Media/PKTGENSETUP.png" width="auto">  
+
+
 1)First run the run PMD test:
 
 https://core.dpdk.org/doc/quick-start/
@@ -23,7 +26,7 @@ https://doc.dpdk.org/dts/test_plans/metrics_test_plan.html
 ```bash
 cd dpdk-23.03
 cd build/app
-./dpdk-testpmd -c 0x30 -n 4  -- -i --latencystats=2
+./dpdk-testpmd -c 0x03 -n 3  -- -i --latencystats=2
 
 testpmd> set fwd io
 testpmd> start
@@ -32,19 +35,19 @@ CTRL C
 ```
 The output is as follows :
 
-<img src="Media/GNU_radio_companion_sample.png" width="auto">  
+<img src="Media/testpmdfwd.png" width="auto">  
 
 Then go to DPDK procinfo to read the latency related measurements
 
 ```bash
 cd dpdk-23.03
 cd build/app
-./dpdk-proc-info -- --metrics
+dpdk-proc-info -- --metrics
 ```
 
 Here it looks like:
 
-<img src="Media/GNU_radio_companion_sample.png" width="auto">
+##<img src="Media/GNU_radio_companion_sample.png" width="auto">##
 
 
 3)To send packets using Testpmd and to capture the sent packets using dpdk-dumpcap
