@@ -11,6 +11,7 @@ b)in cores: remove the list of cores your cpu doesnt have
 c)completely remove blocklist and allowlist
 then go back to pktgen directory:
 6)cd pktgen-dpdk
+7)apt-get install libcap-dev
 7)make
 
 
