@@ -57,6 +57,9 @@ Control and Configuration: DPDK offers fine-grained control over NIC configurati
 Consistency: DPDK ensures consistent and deterministic packet processing behavior, which is crucial for accurate and reproducible network tests. By working in user space and with DPDK, Pktgen can provide consistent behavior across different hardware and operating systems.OES PKTGEN DPDK NEED DPDK TO GENERATE PACKETS?**
 
 **HOW DOES PKTGEN GENERATE PACKETS?**
+
+<img src="Media/PKTGENARCH.jpg" width="auto">  
+
 Does pktgen-dpdk code create sockets to generate packets?THe answer is no!
 The Pktgen-DPDK code does not create sockets to generate packets. Pktgen-DPDK uses the Data Plane Development Kit (DPDK) to generate packets directly through memory-mapped access to network interface cards (NICs). It bypasses the traditional socket-based networking stack provided by the operating system.
 
