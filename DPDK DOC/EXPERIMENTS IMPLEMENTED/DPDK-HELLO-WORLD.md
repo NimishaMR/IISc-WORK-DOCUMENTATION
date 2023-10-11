@@ -5,6 +5,7 @@
 1)Download the latest stable version of DPDK from this link: https://core.dpdk.org/download/
 
 2)Uncompress the archive :
+```bash
 tar xJf dpdk-23.03.tar.xz(or whichever version you download)
 
 3)cd dpdk-23.03
@@ -66,9 +67,13 @@ $ export PKG_CONFIG_PATH=/path/to/installed/".pc" file/for/DPDK
    cd build
    cd examples
    ./dpdk-helloworld -l 0-3 -n 4
+```
 
-   **The output looks like this**
+**The output looks like this**
    
+   <img src="Media/helloworld.png" width=500> 
 
 25)If you want you can also allocate certain cores for dpdk use only, this can be done by:
+```bash
    isolcpus=2,3,4,5,6,7,8
+```
