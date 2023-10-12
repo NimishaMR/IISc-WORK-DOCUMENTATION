@@ -90,7 +90,47 @@ Uprobes are kind of like kprobes, except that instead of instrumenting a kernel 
 Tracepoints are also in the Linux kernel. They are  better than kprobes because they stay more constant across kernel versions.They are worse than kprobes because somebody has to write them explicitly.
 Basically there’s a TRACE_EVENT macro that lets you define tracepoints like this one (which has something to do with UDP)
 
-<img src="Media/tracepoints.png" width=700>  
+ <img src="Media/tracepoints.png" width=400>  
+
+
+ **Choosing the right tracer**
+ You can go through these 2 links :
+ 
+ https://www.brendangregg.com/blog/2015-07-08/choosing-a-linux-tracer.html
+
+https://jvns.ca/blog/2017/03/19/getting-started-with-ftrace/
+
+**Kernelshark and tracecmd ( Front end tools)**
+
+Kernelshark is a Qt-based graphical interface for processing trace-cmd trace.dat reports.
+ ▶ Can also setup and acquire data using trace-cmd. 
+ ▶ Displays CPU and tasks as different colors along 
+with the recorded events.
+ ▶ Useful when a deep analysis is required for a specific bug.
+
+This is the tutorial for Kernel Shark: tutorial for kernel shark: https://elinux.org/images/6/64/Elc2011_rostedt.pdf
+
+ <img src="Media/kernelshark.png" width=400>  
+
+
+**Some useful links**
+1)About OSNOISE tracer :
+  -found only in kernels:
+  5.14–5.19, 6.0–6.3, 6.4-rc+HEAD
+
+2)Difference between profiling and tracing:
+  - https://www.jwhitham.org/2016/02/profiling-versus-tracing.html#:~:text=Tracers%20do%20not%20operate%20by,include%20code%20to%20log%20events
+
+3)Differences between DTRACE , LTRACE , FTRACE and STRACE
+  - http://crtags.blogspot.com/2012/04/dtrace-ftrace-ltrace-strace-      so-many-to.html
+
+4)About preempt-rt patch (to add / make use of hardware tracers , enabe preempt rt patch)
+
+  - https://bootlin.com/doc/training/preempt-rt/preempt-rt-slides.pdf
+
+5)Different ways to find out execution time of any command on linux:
+ - main stackoverflow link that ran this:https://stackoverflow.com      /questions/385408/get-program-execution-time-in-the-shell
+
 
 
 
