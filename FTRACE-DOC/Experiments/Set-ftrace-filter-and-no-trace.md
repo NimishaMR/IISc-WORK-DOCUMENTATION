@@ -9,7 +9,7 @@ echo function > current_tracer
 cat trace | head -15
 ```
 
-<img src="Media/filter.png" width=400>  
+<img src="Media/filter.png" width=600>  
 
 Similarly to trace every function call except particular function calls, the notrace command can be used.
 
@@ -19,5 +19,5 @@ echo '*lock*' > set_ftrace_notrace
 cat set_ftrace_notrace | head -10
 ```
 
-<img src="Media/nofilter.png" width=400>  
+<img src="Media/nofilter.png" width=600>  
 
