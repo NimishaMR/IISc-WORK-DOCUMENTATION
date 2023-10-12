@@ -5,6 +5,7 @@ to trace the kernel function calls at the data link , network and transport laye
 The server is essentially the Rx system while the Client is the Tx system
 First you need to set the server to start listening and then only run the client.
 Both the server and client programs are uploaded in the Experiments folder  under the names : TCP_SERVER.py and TCP_CLIENT.PY
+The values of server and client IP adresses have to be changed according to your system in the server client codes
 
 The steps to execute this experiment are as follows:
 
