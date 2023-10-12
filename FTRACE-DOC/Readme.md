@@ -110,7 +110,7 @@ with the recorded events.
 
 This is the tutorial for Kernel Shark: tutorial for kernel shark: https://elinux.org/images/6/64/Elc2011_rostedt.pdf
 
- <img src="Media/kernelshark.png" width=400>  
+ <img src="Media/kernelshark.png" width=600>  
 
 
 **Some useful links**
