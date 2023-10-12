@@ -51,7 +51,7 @@ ls -F
 
 The tracers available to do diffrent types of tracing are :
 
-<img src="Media/availabletracers.png" width=500>  
+<img src="Media/availabletracers.png" width=700>  
 
 The tracers present in different systems vary according to the kernel version anad ubuntu version you are using
 
@@ -78,7 +78,19 @@ In specific, there are 5 latency tracers:
   Trace time preemption or interrupts disabled
 
 
-  
+**What all can be traced?**
+
+System calls,Linux kernel function calls (which functions in my TCP stack are being called?),Userspace function calls (did malloc get called?),Custom “events” that you’ve defined either in userspace or in the kernel.
+
+**kprobes , uprobes and tracepoints**
+Kprobes let you dynamically change the Linux kernel’s assembly code at runtime (like, insert extra assembly instructions) to trace when a given instruction is called.
+
+Uprobes are kind of like kprobes, except that instead of instrumenting a kernel function you’re instrumenting userspace functions (like malloc)
+
+Tracepoints are also in the Linux kernel. They are  better than kprobes because they stay more constant across kernel versions.They are worse than kprobes because somebody has to write them explicitly.
+Basically there’s a TRACE_EVENT macro that lets you define tracepoints like this one (which has something to do with UDP)
+
+<img src="Media/tracepoints.png" width=700>  
 
 
 
