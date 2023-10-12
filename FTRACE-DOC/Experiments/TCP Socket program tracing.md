@@ -10,7 +10,7 @@ The steps to execute this experiment are as follows:
 
 1)Run the server code on the Receiving system (dont close this terminal until experiment is over)
 ```bash
-./TCP_SERVER.py
+python3 TCP_SERVER.py
 ```
 
 2)In another terminal open the F-Tracer:
@@ -23,7 +23,7 @@ echo function_graph > current_tracer
 
 3)In the third terminal run the client program to send packets:
 ```bash
-./TCP_CLIENT.py
+python3 TCP_CLIENT.py
 ```
 
 4)Now to view the trace you can either:
@@ -48,4 +48,7 @@ The trace file will have function calls related to TCP packet transfer in the li
 ```
 The appropriate kernel functions are mentioned in this important link: https://wiki.linuxfoundation.org/networking/kernel_flow
 
+<img src="Media/trace.png" width=400> 
 
+
+The same type of experiments can be carried out using UDP client and server programs which have also been provided as a Python file.
