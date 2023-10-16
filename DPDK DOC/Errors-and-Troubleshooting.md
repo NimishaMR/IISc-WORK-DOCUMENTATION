@@ -1,8 +1,6 @@
-**DISCLAIMER:**
-
-This file has the solutions and some links to solve some common errors which coe while setting up or implementing DPDK.
+**DISCLAIMER:** This file has the solutions and some links to solve some common errors which coe while setting up or implementing DPDK.
 The one's documented here are the errors which I came across , there may be few other errors which are different from mine as well.
----------------------------------------------------------------------------------------------------------------------------------------------
+
 
 Befor anything else:  if your ip a command is not showing the multinic : then:
 ```bash
@@ -12,7 +10,7 @@ sudo modprobe -r -v ixgbe
 sudo modprobe -v ixgbe
 3)Or last case:the pysical driver ,module maybe corrupted ,have to replace it
 ```
-------------------------------------------------------------------------------------------------------------------------------------------------
+
 **1)IF A ETHERNET NIC IS NOT VISIBLE ON IP A/IFCONFIG BUT ITS VISIBLE ON LSCPI HOW TO SOLVE IT:**
 
 When I gave  ip -a in the terminal and a particular etheret card was not being identified ,namely:
@@ -117,7 +115,7 @@ TO MAKE THIS A PERMANENT SOLUTION:
 6)then when the computer switches on: ifconfig
 ```
 the ports reoccur
----------------------------------------------------------------------------------------------------------------------------------------------------
+
 **2)Not able to edit sys/bus/pci/drivers while binding & unbininding ports.**
 
 https://bbs.archlinux.org/viewtopic.php?id=173773
@@ -186,27 +184,27 @@ try:
 note:
 
 
-----------------------------------------------------------------------------------------------------------------------------------
+
 
 **4)Changing the GRUB settings to enable iommu on:**
 
    https://www.pugetsystems.com/labs/hpc/how-to-use-linux-kernel-boot-options/
----------------------------------------------------------------------------------------------------------------------------------
+
 **5)Intel VFIO-PCI Driver Error -22**
 
    https://inbox.dpdk.org/ci/8c696743-5640-9ad9-aba4-916ca8858f64@intel.com/t/
 
    have "intel_iommu=on iommu=pt" in their kernel parameters.
 
----------------------------------------------------------------------------------------------------------------------------------
+
 **6)BIND/UNBIND PCI device on ubuntu host--all about unbinding and binding**
 
    https://serverfault.com/questions/1080606/bind-unbind-pci-device-on-the-ubuntu-host
-----------------------------------------------------------------------------------------------------------------------------------
+
 7)**Using lspci on Linux to see display devices and drivers on your linux system:**
 
   https://opensource.com/article/21/9/lspci-linux-hardware
----------------------------------------------------------------------------------------------------------------------------------
+
 **8)J)LINKS TO SOLVE THE IOMMU  ISSUE**
 
 https://www.goglides.dev/bkpandey/what-is-iommu-how-to-check-iommu-is-enabled-1p7c
@@ -216,7 +214,7 @@ https://ubuntuforums.org/showthread.php?t=2394933
 https://www.reddit.com/r/virtualization/comments/bh0y6m/iommu_groups_empty/
 https://doc.dpdk.org/guides-21.11/linux_gsg/linux_drivers.html
 
------------------------------------------------------------------------------------------------------------------------------------
+
 
 In certain situations, using dpdk-devbind.py script to bind a device to VFIO driver may fail. The first place to check is the kernel messages:
 
@@ -240,4 +238,4 @@ cat /boot/config-$(uname -r) | grep NOIOMMU
 
 If CONFIG_VFIO_NOIOMMU is not enabled in the kernel configuration, VFIO driver will not support the no-IOMMU mode, and other alternatives 
 (such as UIO drivers) will have to be used.
--------------------------------------------------------------------------------------------------------------------------------------------
+
