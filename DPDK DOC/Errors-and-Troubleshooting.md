@@ -130,7 +130,7 @@ echo 0000:01:00.0 > /sys/bus/pci/drivers/pci-stub/bind
 
 chmod 666 /sys/bus/pci/drivers/pci-stub/new_id
 ```
------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 3)Unable to bind intel NIC 82599ES to vfio-pci, uio_pci_generic
 
@@ -234,7 +234,7 @@ In certain distributions, default kernel configuration is such that the no-IOMMU
 his can be checked in the boot configuration of your system:
 cat /boot/config-$(uname -r) | grep NOIOMMU
 
-# CONFIG_VFIO_NOIOMMU is not set
+**CONFIG_VFIO_NOIOMMU is not set**
 
 If CONFIG_VFIO_NOIOMMU is not enabled in the kernel configuration, VFIO driver will not support the no-IOMMU mode, and other alternatives 
 (such as UIO drivers) will have to be used.
