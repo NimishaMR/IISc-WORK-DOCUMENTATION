@@ -1,4 +1,4 @@
-**THe steps to execue rxtx callbacks has been given here, this application adds timestamps to the packets and gives the forwarding latency in a DPDK application**
+**THe steps to execute rxtx callbacks has been given here, this application adds timestamps to the packets and gives the forwarding latency in a DPDK application**
 
 
 ```bash
@@ -55,7 +55,7 @@ observe the same packets being received by the wireshark in the receiving system
 The number of packets after which RXTX callbacks prints the cpu latency can be chnaged in this file using this command:
 1)Go to examples/rxtx callbacks and the main.c code and change this line:line 97
 if (latency_numbers.total_pkts > (100 * 1000 * 1000ULL)) {
-------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 **THE OUTPUT WILL BE REPRESENTED IN THE FORM OF CPU CYLES(hertz/second)**
 
