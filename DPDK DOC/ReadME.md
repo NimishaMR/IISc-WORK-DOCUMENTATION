@@ -36,6 +36,7 @@ The DPDK has five core components that are responsible for sending packets from 
 4)The **TIMER** library is a DPDK service that offers asynchronistic callback functions. There is an interface to add, delete, or restart a timer.
 
 **How does DPDK bypass the kernel?**
+
 1)Instead of relying on a kernel network stack, kernel bypass solutions implement user space networking. It helps to avoid unnecessary memory copies (kernel space to user space) and avoids the scheduler delay when placing the receiver thread for execution. In kernel bypass, the receiver thread typically uses busy-waiting. Rather than waiting on a lock, it continuously checks the lock variable until it flags: “Go!” high throughput and low latency option for Ethernet networking is the Data Plane Development Kit (DPDK).
 
 2)DPDK dedicates certain CPU Cores to be the packet receiver threads and since this particular core is restricteed only to DPDK, it uses a permanent polling mode in the driver to ensure the quickest possible response to arriving packets.
@@ -66,6 +67,7 @@ DMA memory space into the user-land memory space the application is using, hence
 in DPDK. DPDK is a set of libraries and optimized network interface card (NIC) drivers for fast packet processing in a user space.
 
 **Drawbacks of DPDK**
+
 1)To start, it is a bit of a niche technology, so finding articles and examples online (especially for use-cases outside established areas) can be challenging.
 
 2)Bypassing the kernel means you also bypass its time-tested TCP stack. If your application uses a TCP based protocol like HTTP, you need to provide your own TCP networking stack in userspace. There are frameworks like Seastar and F-Stack that help, but migrating your application to them may be non-trivial.
@@ -79,6 +81,7 @@ in DPDK. DPDK is a set of libraries and optimized network interface card (NIC) d
 6)DPDK based applications take full control of the network interface, which means: You must have more than one interface. If you want to modify device settings, you have to do it before startup, or through the application. 
 
 **Hugepages**
+
 Applications using hugepages can benefit from these larger page sizes because they have a greater chance of finding memory mapping info
 in cache and thereby avoid more expensive operations.
 
@@ -135,7 +138,8 @@ For such PMDs, any network ports or other hardware under Linux* control will be 
 To bind ports to the vfio-pci module for DPDK use, or to return ports to Linux control, a utility script called dpdk-devbind.py is provided in the usertools subdirectory.
 Note that the UIO or VFIO kernel modules to be used, should be loaded into the kernel before running the dpdk-devbind.py script.
 
-**some useful links**
+**Some useful links**
+
 THESE ARE VERY VERY GOOD READ TO UNDERSTAND THE RALTIONSHIP BW OPEN V SWITCH,DPDK,NORMAL KERNEL AND QUEMU:
 
 https://www.packetcoders.io/what-is-dpdk/
@@ -166,7 +170,7 @@ HOW TO SET UP SINGLE FLOW AND MULTI FLOW TRAFFIC:
 
 https://levelup.gitconnected.com/building-a-high-performance-linux-based-traffic-generator-with-dpdk-93bb9904416c
 
-IMPORTATNT LINK:
+IMPORTANT LINK:
 
 https://github.com/atoonk/dpdk_pktgen/tree/master
 
