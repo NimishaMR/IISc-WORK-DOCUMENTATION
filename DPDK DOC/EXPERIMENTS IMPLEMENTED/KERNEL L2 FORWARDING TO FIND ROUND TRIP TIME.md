@@ -2,7 +2,7 @@
 
 (3so is acting as the bridge and  4s0 acting as the network namespace which sends and receives packets)
 
-<img src="Media/LINUXNAMESPACE.png" width="auto">  
+<img src="Media/LINUXNAMESPACE.png" width=700>  
 
 1)In the 4s0f0 system execute a script which creates network namespaces to assign IP addresses to each port of a single NIC.THis script can be found in the 
 "multinic_namespace_cfg.sh" file under Experiments implememted folder.
@@ -13,7 +13,7 @@
 
 4)This will create the network namespaces and 
 
-<img src="Media/multinicnamesapce.png" width="auto">  
+<img src="Media/multinicnamesapce.png" width=700>  
 
 to verify that execute :
 ```bash
@@ -52,7 +52,7 @@ The Bridge setting script titled "multinic-as-bridge.sh" can also be found in "e
 
 3)Do not create any network namespace in this system , you should just create a bridge here.
 
-<img src="Media/multinibridge.png" width="auto"> 
+<img src="Media/multinibridge.png" width=600> 
 
 Now to send UDP packets from 4s0 and 3s0 fowards it back to 4so and to receive this we need to run the following commands in 4so system
 as iperf server and client programs
@@ -77,9 +77,9 @@ Compare the Timestamp values at the bridging NIC Or the TX/RX NIC ports to measu
 
 **RESULT**
 
-1)Forwarding latency(at 3s0 system wireshark files)=Average 17.123 Microseconds  (for 20 UDP packets sent for 15 seconds at bw of 1K)
+**1)Forwarding latency(at 3s0 system wireshark files)=Average 17.123 Microseconds  (for 20 UDP packets sent for 15 seconds at bw of 1K)**
 
-2)Round trip latency(at 4s0 system wirehshark files)= Average 176 Microseconds  (for 20 UDP packets sent for 15 seconds at bw of 1K)
+**2)Round trip latency(at 4s0 system wirehshark files)= Average 176 Microseconds  (for 20 UDP packets sent for 15 seconds at bw of 1K)**
 
 
 
