@@ -150,7 +150,3 @@ The timestamps recorded by DPDK are precise hardware-level timestamps that captu
 
 2)https://doc.dpdk.org/guides/prog_guide/metrics_lib.html#timestamp-and-latency-calculation : scroll down to  Latency statistics library
 
-3)
-
-
-**
