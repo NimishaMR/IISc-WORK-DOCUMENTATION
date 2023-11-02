@@ -105,7 +105,7 @@ The format of the port much change according to your system:
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------
 **These are the initial configurations that have to be done,if you encounter errors ,head to the file titled
-"ERROR CORRECTIONS AND TROUBLESHOOTING"
+"ERROR CORRECTIONS AND TROUBLESHOOTING"**
 
 
 
