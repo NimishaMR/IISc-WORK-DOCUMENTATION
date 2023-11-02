@@ -1,4 +1,4 @@
-**DISCLAIMER:** This file has the solutions and some links to solve some common errors which coe while setting up or implementing DPDK.
+**DISCLAIMER:** This file has the solutions and some links to solve some common errors which show while setting up or implementing DPDK.
 The one's documented here are the errors which I came across , there may be few other errors which are different from mine as well.
 
 
@@ -11,7 +11,7 @@ sudo modprobe -v ixgbe
 3)Or last case:the pysical driver ,module maybe corrupted ,have to replace it
 ```
 
-**1)IF A ETHERNET NIC IS NOT VISIBLE ON IP A/IFCONFIG BUT ITS VISIBLE ON LSCPI HOW TO SOLVE IT:**
+**1)If an ethernet nic is not visible when you execute "ip a" or " ifconfig" but its visible when you execute "lspci" , then do this :**
 
 When I gave  ip -a in the terminal and a particular etheret card was not being identified ,namely:
 INTEL NIC X520 -D2 port eth0 and eth1:
@@ -62,13 +62,13 @@ this information is available in the following links:
 
 https://www.intel.com/content/www/us/en/support/articles/000027683/ethernet-products/500-series-network-adapters-up-to-10gbe.html
 https://www.reddit.com/r/homelab/comments/8btmo8/updating_intel_x520da2_firmware/
-https://community.intel.com/t5/Ethernet-Products/x520-2-new-firmware/td-p/518677  : how to update firmware 
+https://community.intel.com/t5/Ethernet-Products/x520-2-new-firmware/td-p/518677  : 
 
-execute the line : 
+Too update firmware  execute the line : 
 ```bash
 ethtool -i 03:00.0 (in /sys/class/net)
 ```
-if this command gives error as : Cannot get driver information: No such device
+If this command gives error as : Cannot get driver information: No such device
 
 then follow this link:
 
@@ -234,7 +234,7 @@ In certain distributions, default kernel configuration is such that the no-IOMMU
 his can be checked in the boot configuration of your system:
 cat /boot/config-$(uname -r) | grep NOIOMMU
 
-**CONFIG_VFIO_NOIOMMU is not set**
+**9)CONFIG_VFIO_NOIOMMU is not set**
 
 If CONFIG_VFIO_NOIOMMU is not enabled in the kernel configuration, VFIO driver will not support the no-IOMMU mode, and other alternatives 
 (such as UIO drivers) will have to be used.
