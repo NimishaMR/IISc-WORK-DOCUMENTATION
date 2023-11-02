@@ -1,12 +1,13 @@
-This is the documentation for the work pertaining to the Intel Data Plane Development Kit that I have worked on at Zenlab , IISc.
+This is the documentation for the work pertaining to the Intel Data Plane Development Kit
 
-It conatins information about what DPDK is , it's advantages and drawbacks , it's architecturual composition and it's scope of application.
+It contains information about what DPDK is , it's advantages and drawbacks , it's architectural composition and it's scope of application.
 
-To set up DPDK on your Ubuntu machine , you need to keep in mind some dependensies and do some installations.All the modules to be installed are provided as 'shell' commands in the Installations and Dependencies File.
+To set up DPDK on your Ubuntu machine , you need to keep in mind some dependensies and do some installations.All the modules to be installed are provided as 'shell' commands in the 'Installations and Dependencies' File.
 
-The different experiments that have been carried out using DPDK sample applications and it's relevent implementation steps have been provided as "Bash" commands to be executed on the terminal in the folder "Procedure for implementation".
+The different experiments that have been carried out using DPDK sample applications and it's relevent implementation steps have been provided as 
+ Bash commands to be executed on the terminal in the folder "Procedure for implementation".
 
-While setting up and using DPDK and DPDK Based Traffic Generators like Pktgen and Moongen , I encountered many errors which have been documented with their respective corrections in the "Errors and Resolutions" folder.
+While setting up and using DPDK and DPDK Based Traffic Generators like Pktgen and Moongen , I encountered couple of  errors which have been documented with their respective corrections in the "Errors and Resolutions" folder.
 
 **SO WHAT IS DPDK?**
 
@@ -17,7 +18,7 @@ It supports many processor architectures and both FreeBSD and Linux.
 The DPDK uses the Open Source BSD-3-Clause license for the core libraries and drivers. The kernel components are GPL-2.0 licensed.
 Data Plane Development Kit (DPDK) greatly boosts packet processing performance and throughput, allowing more time for data plane applications. DPDK can improve packet processing performance by up to ten times.As a result, telecom and network equipment manufacturers (TEMs and NEMs) can lower development costs, use fewer tools and support teams, and get to market faster.
 
-VIDEO GUIDE FOR DPDK INSTALLATION AND USAGE:
+**VIDEO GUIDE FOR DPDK INSTALLATION AND USAGE:**
 
 https://www.intel.com/content/www/us/en/developer/videos/data-plane-development-dpdk-installation-guide.html
 
@@ -138,49 +139,47 @@ For such PMDs, any network ports or other hardware under Linux* control will be 
 To bind ports to the vfio-pci module for DPDK use, or to return ports to Linux control, a utility script called dpdk-devbind.py is provided in the usertools subdirectory.
 Note that the UIO or VFIO kernel modules to be used, should be loaded into the kernel before running the dpdk-devbind.py script.
 
+
+
 **Some useful links**
 
-THESE ARE VERY VERY GOOD READ TO UNDERSTAND THE RALTIONSHIP BW OPEN V SWITCH,DPDK,NORMAL KERNEL AND QUEMU:
+1)Read this to understand the relationship between Open Virtual Switch(OVS), DPDK ,Kernel and QEMU:
 
-https://www.packetcoders.io/what-is-dpdk/
+A)https://www.packetcoders.io/what-is-dpdk/
 
-https://www.sartura.hr/20181029-state-of-fast-path-networking-in-linux.pdf
+B)https://www.sartura.hr/20181029-state-of-fast-path-networking-in-linux.pdf
 
-THE SLIDES EXPLAINING IN DETAIL ABOUT L2 FORWARDING EXAMPLE
+2)GO through this to learn about the L2 Forwarding example
 
 https://www.cse.iitb.ac.in/~mythili/os/anno_slides/DPDK_deep_dive_slides.pdf
 
-L3 FORWARDING TESTS:
+3)L3 Forwarding tests:
 
 https://doc.dpdk.org/dts/test_plans/l3fwd_test_plan.html
 
-SCAPY TRAFFIC GENERATOR:
+4)SCAPY Traffic generator:
 
 https://stackoverflow.com/questions/68836518/scapy-traffic-generator-for-dpdk-l3fwd-application
 
-CISCO TREX FOR TRAFFIC GENERATION:
+5)CISCO TREX Traffic Generator:
 
 https://stackoverflow.com/questions/68836518/scapy-traffic-generator-for-dpdk-l3fwd-application
 
-How to generate traffic in dpdk:
+6)Overview of how packets can be generated in DPDK:
 
 https://stackoverflow.com/questions/68983270/how-to-send-packet-another-server-using-dpdk
 
-HOW TO SET UP SINGLE FLOW AND MULTI FLOW TRAFFIC:
+7)Setting up single flow and multiflow traffic
 
 https://levelup.gitconnected.com/building-a-high-performance-linux-based-traffic-generator-with-dpdk-93bb9904416c
 
-IMPORTANT LINK:
+8)Resource regarding pktgen
 
 https://github.com/atoonk/dpdk_pktgen/tree/master
 
-BUILD YOUR OWN TRAFFIC GENERATOR:
+9)Follow this if you want to build your own traffic generator
 
 https://www.intel.com/content/www/us/en/developer/articles/training/build-your-own-dpdk-traffic-generator.html
-
-LEARNING L2 FORWARDING:
-
-https://haryachyy.wordpress.com/2014/11/09/learning-dpdk-l2-forwarding-app/
 
 
 
