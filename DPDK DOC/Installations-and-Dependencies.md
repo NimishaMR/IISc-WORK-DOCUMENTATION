@@ -104,8 +104,8 @@ The format of the port much change according to your system:
  2)interface format [PCIe B:D:F]
 ```
 --------------------------------------------------------------------------------------------------------------------------------------------------
-THESE ARE ALL THE INITIAL CONFIGURATIONS THAT HAVE TO BE DONE, IF THERE ARE ERRORS WHILE SETTING UP THESE THINGS...THEN CHECK THE FILE CALLED 
-"ERROR CORRECTIONA ND TROUBLESHOOTING"
+**These are the initial configurations that have to be done,if you encounter errors ,head to the file titled
+"ERROR CORRECTIONS AND TROUBLESHOOTING"
 
 
 
