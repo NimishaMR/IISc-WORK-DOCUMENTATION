@@ -205,7 +205,7 @@ note:
 
   https://opensource.com/article/21/9/lspci-linux-hardware
 
-**8)J)LINKS TO SOLVE THE IOMMU  ISSUE**
+**8)LINKS TO SOLVE THE IOMMU  ISSUE**
 
 https://www.goglides.dev/bkpandey/what-is-iommu-how-to-check-iommu-is-enabled-1p7c
 https://forum.proxmox.com/threads/iommu-enabled-but-not-detected.110417/
