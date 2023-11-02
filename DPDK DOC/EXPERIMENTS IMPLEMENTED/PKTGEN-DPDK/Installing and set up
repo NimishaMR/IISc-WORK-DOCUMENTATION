@@ -1,5 +1,7 @@
 First setup pktgen application:
 
+**DISCLAIMER: PKTGEN setup will not build correctly if the version of Pktgen and version of dpdk installed on your machine are not the same , so make sure to install the most recent matching stable versions of both the softwares. 
+
 Follow these steps for it:
 1)git clone git://dpdk.org/apps/pktgen-dpdk
 2)cd pktgen-dpdk
@@ -26,6 +28,6 @@ DRIVERS "
 
 
 
-THere are two scripts in the experiments implemented folder called "install-dpdk-pktgen.sh" and "dpdk-install-joy.sh"
+There are two scripts in the experiments implemented folder called "install-dpdk-pktgen.sh" and "dpdk-install-joy.sh"
 These two scripts an be run as root to overall install dpdk and pktgen together and also set up all hugepages and bind the ports to DPDK
 
